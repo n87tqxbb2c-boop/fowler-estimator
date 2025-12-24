@@ -265,10 +265,22 @@ const App = {
           `).join("")}
           <div class="row" style="align-items:center; margin-top:8px">
             <div class="total">TOTAL: ${money(App.total())}</div>
+            </div>
             <div class="muted" id="depositLine"></div>
           </div>
-        </div>
       `;
+      
+      setTimeout(() => {
+  const total = App.total();
+  const dep = depositAmount(total);
+  const txt = `Deposit Required: ${money(dep)} (50% of total) due at contract signing`;
+
+  const depEl = document.getElementById("depositLine");
+  if (depEl) depEl.textContent = txt;
+
+  const printEl = document.getElementById("printDeposit");
+  if (printEl) printEl.textContent = txt;
+}, 0);
       return;
     }
 
