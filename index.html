@@ -25,6 +25,20 @@
     .total { font-size:20px; font-weight:700; }
     footer { position: fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid #ddd; padding:10px 12px; }
     footer .row { justify-content: space-between; }
+    /* ---- Print / PDF formatting ---- */
+@media print {
+  body { background: #fff !important; }
+  header, footer { display: none !important; }
+  main { max-width: none !important; padding: 0 !important; }
+
+  .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+  button, input, textarea, select { display: none !important; }
+
+  .print-only { display: block !important; }
+  .no-print { display: none !important; }
+}
+
+.print-only { display: none; }
   </style>
 </head>
 <body>
