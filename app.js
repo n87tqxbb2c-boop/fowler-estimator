@@ -205,6 +205,17 @@ const App = {
           `).join("")}
         </div>
       `;
+      setTimeout(() => {
+  const total = App.total();
+  const dep = depositAmount(total);
+  const txt = `Deposit Required: ${money(dep)} (50% of total) due at contract signing`;
+
+  const depEl = document.getElementById("depositLine");
+  if (depEl) depEl.textContent = txt;
+
+  const printEl = document.getElementById("printDeposit");
+  if (printEl) printEl.textContent = txt;
+}, 0);
       return;
     }
 
