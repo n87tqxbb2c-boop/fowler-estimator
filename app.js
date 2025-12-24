@@ -23,6 +23,7 @@ const Store = {
 };
 
 const money = (n) => `$${(Number(n)||0).toFixed(2)}`;
+const depositAmount = (total) => (Number(total) || 0) * 0.50; // 50%
 // --- Deposit (always 50%) for print/PDF ---
 function getEstimateTotal(state) {
   const items = state?.estimate?.items || [];
