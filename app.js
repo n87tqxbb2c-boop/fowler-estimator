@@ -8,6 +8,8 @@ const Store = {
       activeJobId: null,
       estimate: { items: [] },
       terms: {
+        depositPercent: 50,
+        depositEnabled: true,
         depositText: "Deposit: 50% due upfront for materials. Remaining balance due upon completion.",
         materialWindowText: "Scheduling/Materials: Work is typically scheduled within 72 hours after deposit is received and materials are gathered (weather permitting).",
         warrantyText: "Warranty: 2-year workmanship warranty.",
