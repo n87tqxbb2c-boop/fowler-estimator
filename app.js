@@ -23,6 +23,21 @@ const Store = {
 };
 
 const money = (n) => `$${(Number(n)||0).toFixed(2)}`;
+// --- Deposit (always 50%) for print/PDF ---
+function getEstimateTotal(state) {
+  const items = state?.estimate?.items || [];
+  return items.reduce((sum, it) => sum + (Number(it.price) || 0), 0);
+}
+
+function updatePrintDeposit(state) {
+  const el = document.getElementById("printDeposit");
+  if (!el) return;
+
+  const total = getEstimateTotal(state);
+  const deposit = total * 0.50;
+
+  el.innerHTML = `<strong>Deposit Required:</strong> ${money(deposit)} (50% of total) due at contract signing`;
+}
 const uid = () => Math.random().toString(16).slice(2) + Date.now().toString(16);
 
 const App = {
@@ -282,3 +297,5 @@ const App = {
 
 window.App = App;
 App.render();
+const state = Store.load();
+updatePrintDeposit(state);
