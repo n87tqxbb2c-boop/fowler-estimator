@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fowler’s Estimator</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#111111" />
+  <style>
+    body { font-family: -apple-system, system-ui, Arial; margin: 0; background:#f6f6f6; }
+    header { background:#111; color:#fff; padding:14px 16px; }
+    header small { opacity:.85; display:block; margin-top:4px; }
+    main { padding: 14px 16px 90px; max-width: 900px; margin: 0 auto; }
+    .card { background:#fff; border-radius:12px; padding:12px; margin:10px 0; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .row { display:flex; gap:10px; flex-wrap: wrap; }
+    input, textarea, select { width: 100%; padding:10px; border:1px solid #ddd; border-radius:10px; font-size:16px; }
+    button { padding:10px 12px; border:0; border-radius:10px; font-size:16px; }
+    .btn { background:#111; color:#fff; }
+    .btn2 { background:#e9e9e9; }
+    .danger { background:#c62828; color:#fff; }
+    .pill { padding:6px 10px; border-radius:999px; background:#efefef; display:inline-block; font-size:13px; }
+    .list button { width: 100%; text-align:left; }
+    .muted { color:#666; }
+    .right { margin-left:auto; }
+    .total { font-size:20px; font-weight:700; }
+    footer { position: fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid #ddd; padding:10px 12px; }
+    footer .row { justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><b>Fowler’s Handyman Service LLC</b></div>
+    <small>Estimator (Offline) • 912-293-7202</small>
+  </header>
+
+  <main id="app"></main>
+
+  <footer>
+    <div class="row">
+      <button class="btn2" onclick="App.go('customers')">Customers</button>
+      <button class="btn2" onclick="App.go('jobs')">Jobs</button>
+      <button class="btn2" onclick="App.go('estimate')">Estimate</button>
+      <button class="btn2" onclick="App.go('settings')">Terms</button>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+  </script>
+</body>
+</html>
