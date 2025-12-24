@@ -265,6 +265,7 @@ const App = {
           `).join("")}
           <div class="row" style="align-items:center; margin-top:8px">
             <div class="total">TOTAL: ${money(App.total())}</div>
+            <div class="muted" id="depositLine"></div>
           </div>
         </div>
       `;
